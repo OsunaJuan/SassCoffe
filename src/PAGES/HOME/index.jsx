@@ -1,10 +1,10 @@
 import React from 'react'
+import { HashLink } from 'react-router-hash-link';
 import './index.css'
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import { useProductProvider } from '../../CONTEXT'
 import {HomeCards} from '../../COMPONENTS/HomeCards'
-import { Footer } from '../../COMPONENTS/Footer';
 import { ProductCard } from '../../COMPONENTS/ProductCard'
 import { CheckoutSideMenu } from '../../COMPONENTS/CheckoutSideMenu';
 import { ProductDetail } from '../../COMPONENTS/ProductDetail';
@@ -36,16 +36,20 @@ function Home() {
         </video>
       </figure>
 
-      <section>
+      <section id='hero'>
         <div className=" flex justify-start items-center w-full h-screen relative z-20">
           <div className="flex flex-col h-1/3 ml-80">
-            <p className="text-white text-7xl">Conoce nuestros cafes</p>
-            <button className="text-white">ir</button>
+            <h1 className=" pb-20 text-white text-8xl font-black">Calidad, cosechada en granos.</h1>
+            <HashLink to="/#HomeInfo" className="w-5/12 rounded-none text-white text-4xl font-bold">
+              <div className='GlassButton p-4 rounded-lg hover:bg-white hover:text-black text-center  '>
+                Probá nuestros cafés:
+              </div>              
+            </HashLink>
           </div>
         </div>
       </section>
 
-      <section className=" flex justify-center w-full z-20 bg-white">
+      <section id='HomeInfo' className=" flex justify-center w-full z-20 bg-white">
         <div className="relative w-4/5 py-16">
           {homeCardsInfo.map((item, index) => (
             <HomeCards
@@ -79,7 +83,7 @@ function Home() {
         </div>
       </section>
 
-      <Footer/>
+      {/* <Footer/> */}
 
       <CheckoutSideMenu />
 

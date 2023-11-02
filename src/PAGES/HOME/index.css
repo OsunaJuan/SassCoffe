@@ -12,3 +12,11 @@
     box-shadow: .7rem .7rem 1rem 0 rgba(0, 0, 0, 0.3);
 }
 
+.GlassButton{
+    transition-duration: 300ms;
+    backdrop-filter: blur(7px) saturate(187%);
+    -webkit-backdrop-filter: blur(18px) saturate(187%);
+    background-color: rgba(106, 109, 122, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+

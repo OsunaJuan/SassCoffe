@@ -8,6 +8,7 @@ import {Home } from '../HOME'
 import {NotFound} from '../NOT_FOUND'
 import { Layout } from '../../COMPONENTS/Layout'
 import { NavBar } from '../../COMPONENTS/Navbar'
+import { Footer } from '../../COMPONENTS/Footer'
 import { ProductProvider } from '../../CONTEXT'
 
 import './App.css'
@@ -27,6 +28,7 @@ function App() {
             <Route path = '*' element = {<NotFound/>}/>
           </Route>
         </Routes>
+        <Footer/>
       </ProductProvider>
     </HashRouter>
   )
