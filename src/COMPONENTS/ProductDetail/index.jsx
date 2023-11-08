@@ -10,9 +10,8 @@ function ProductDetail() {
   const {tittle, description,price,imgURL} = showedProduct
   return (
     <aside
-      className={`${
-        isDetailOpen ? "flex " : "hidden "
-      } flex-col justify-start  items-center fixed top-[10%] right-0 w-1/4 h-[calc(100vh-10%)] border-black z-50 border-2 rounded-lg bg-white overflow-y-scroll customBar `}
+      className={`${isDetailOpen ? " right-0 " : " right-[-25%] "}  
+      flex flex-col justify-start  items-center fixed top-[10%]  w-1/4 h-[calc(100vh-10%)] border-black z-50 border-2 rounded-lg bg-white overflow-y-scroll  duration-500 customBar `}
     >
       <div className="flex justify-between w-full p-4">
         <p>Detalle</p>
