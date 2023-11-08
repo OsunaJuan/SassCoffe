@@ -22,9 +22,9 @@ function Home() {
   const bestSellers = [Products[2],Products[7],Products[4]]  
 
   const homeCardsInfo =[
-    {text:"Ayudando a plantaciones locales",imgURL:AgricultureImg},
-    {text:"Con los mas altos estandares de calidad",imgURL:QualiyImg},
-    {text:"Variedades seleccionadas de todo el mundo",imgURL:VarietyImg}
+    {text:"Respaldamos a quienes cultivan con pasión",imgURL:AgricultureImg},
+    {text:"Saborea la excelencia en cada taza",imgURL:QualiyImg},
+    {text:"Café que te lleva a lugares lejanos en cada sorbo",imgURL:VarietyImg}
   ]
 
   return (
@@ -83,7 +83,6 @@ function Home() {
         </div>
       </section>
 
-      {/* <Footer/> */}
 
       <CheckoutSideMenu />
 
