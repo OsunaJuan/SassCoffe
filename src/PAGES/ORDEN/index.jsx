@@ -62,7 +62,7 @@ import { useTotalBalance } from '../../HOOKS/useTotalBalance'
       ) : (
         <>
           <p>Orden Vacia :( </p>
-          <Link to={"/ordenes"}>Volver a todas las ordenes</Link>
+          <Link className=' flex-grow' to={"/ordenes"}>Volver a todas las ordenes</Link>
         </>
       )}
     </>

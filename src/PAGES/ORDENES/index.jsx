@@ -18,7 +18,7 @@ import { OrderCard } from '../../COMPONENTS/OrderCard'
 
   if(orders.length > 0){
     return (
-      <div className="flex flex-col-reverse flex-1 justify-start items-center w-1/2 ">
+      <div className="flex flex-col-reverse justify-start items-center w-1/2 ">
         {
           orders.map((item,index)=>(
             item? 

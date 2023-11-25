@@ -20,8 +20,9 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path = '/' element = {<Home/>}/>
+          
           <Route element= {<Layout/>}>
-            <Route path='/store' element = {<Store/>}/>
+          <Route path='/store' element = {<Store/>}/>
             <Route path = '/cuenta' element = {<MiCuenta/>}/>
             <Route path = '/orden/:id' element = {<Orden/>}/>
             <Route path = '/ordenes' element = {<Ordenes/>}/>
