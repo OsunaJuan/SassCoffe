@@ -1,10 +1,10 @@
 import React from 'react'
-import { useProductProvider } from '../../CONTEXT'
+
 
 function StoreLayout({children}) {
-  const {isDetailOpen,isCheckoutOpen} = useProductProvider()
+  
   return (
-    <section className= {`grid grid-cols-4 grid-flow-row gap-40 flex-grow `}>
+    <section className= {`grid grid-cols-4 auto-rows-fr gap-28 w-full h-full`}>
         {children}
     </section>
   )

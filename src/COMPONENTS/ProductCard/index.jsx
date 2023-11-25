@@ -9,48 +9,43 @@ function ProductCard({product}) {
   const {openDetail,cartState,setCartState} = useProductProvider();
   const [addItem] = useCart()
   return (
-    <article className='flex flex-col w-full h-full rounded-t-3xl  rounded-b-3xl border border-gray-300 sombra  '>
-
-      <figure className='relative '>
-        <img src={imgURL} alt={`imagen del Producto ${tittle}`}  className=' rounded-t-3xl' />
-        <button 
-          className=' absolute top-5 right-6 bg-black opacity-80  py-1 px-4 border border-orange-500  rounded-full text-xl font-semibold text-orange-500'
-          onClick={()=> openDetail(product)}
+    <article className="flex flex-col w-full h-full rounded-t-3xl  rounded-b-3xl border border-gray-300 sombra  ">
+      <figure className="relative ">
+        <img
+          src={imgURL}
+          alt={`imagen del Producto ${tittle}`}
+          className=" rounded-t-3xl"
+        />
+        <button
+          className=" absolute top-5 right-6 bg-black opacity-80  py-1 px-4 border border-orange-500  rounded-full text-xl font-semibold text-orange-500 hover:bg-orange-500 hover:text-black hover:border-black transition duration-300"
+          onClick={() => openDetail(product)}
         >
           Ver más
         </button>
       </figure>
 
-      <div className='flex flex-col flex-grow justify-between '>
-        <div className=' px-4 mb-2'>
-          <h3 className=' font-bold'>{tittle}</h3>
-          <div className='h-1/6 w-11/12'>
-          <div className=''>
-           <p className='truncate text-base'>{description}</p>
+      <div className="flex flex-col flex-grow justify-between">
+        <div className=" px-4 mb-2">
+          <h3 className=" font-bold text-center">{tittle}</h3>
+          <div className="h-1/6 w-11/12">
           </div>
-         
-          </div>
-          
         </div>
 
-        <button 
-          className='flex justify-around items-center w-10/12 p-3 mb-5 mx-auto bg-orange-500 bg-opacity-95 rounded-2xl text-white'
-          onClick={
-            (e) => {addItem(product, cartState, setCartState)}
-          }
-        
+        <button
+          className="flex justify-around items-center w-10/12 p-3 mt-4 mb-5 mx-auto bg-orange-500 bg-opacity-95 rounded-2xl text-white hover:scale-110 transition duration-300"
+          onClick={(e) => {
+            addItem(product, cartState, setCartState);
+          }}
         >
-          <span className=' p-2 rounded-2xl bg-black bg-opacity-80  '>
+          <span className=" py-2 px-6 rounded-2xl bg-black bg-opacity-80  ">
             {`$${price}`}
           </span>
 
-          <p>Añadir</p>
+          <p className=' font-bold'>Añadir</p>
 
-          <ChevronRightIcon className=' w-8'/>
+          <ChevronRightIcon className=" w-8" />
         </button>
-
       </div>
-
     </article>
 
     // <div
