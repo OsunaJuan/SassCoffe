@@ -23,8 +23,8 @@ function Home() {
 
   const homeCardsInfo =[
     {text:"Respaldamos a quienes cultivan con pasión",imgURL:AgricultureImg},
-    {text:"Saborea la excelencia en cada taza",imgURL:QualiyImg},
-    {text:"Café que te lleva a lugares lejanos en cada sorbo",imgURL:VarietyImg}
+    {text:"Saboreamos la excelencia en cada taza",imgURL:QualiyImg},
+    {text:"Descubrimos nuevos horizontes con cada sorbo",imgURL:VarietyImg}
   ]
 
   return (
@@ -39,7 +39,7 @@ function Home() {
       <section id='hero'>
         <div className=" flex justify-start items-center w-full h-screen relative z-20">
           <div className="flex flex-col h-1/3 ml-80">
-            <h1 className=" pb-20 text-white text-8xl font-black">Calidad, cosechada en granos.</h1>
+            <h1 className=" pb-20 text-white text-8xl font-black text">Calidad, cosechada en granos.</h1>
             <HashLink to="/#HomeInfo" className="w-5/12 rounded-none text-white text-4xl font-bold">
               <div className='GlassButton p-4 rounded-lg hover:bg-white hover:text-black text-center  '>
                 Probá nuestros cafés:
@@ -75,7 +75,7 @@ function Home() {
               animateOnce={true}
               key={i}
             >
-              <div className="sombra">
+              <div>
                 <ProductCard product={item} />
               </div>
             </ScrollAnimation>

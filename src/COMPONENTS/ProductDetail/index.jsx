@@ -1,7 +1,7 @@
 import React from 'react'
 import { useProductProvider } from '../../CONTEXT'
 import { useCart } from '../../HOOKS/useCart';
-import { XCircleIcon, PlusCircleIcon } from '@heroicons/react/24/solid'
+import { XCircleIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 import './index.css'
 
 function ProductDetail() {
@@ -26,15 +26,24 @@ function ProductDetail() {
           <img src={imgURL} className=" w-3/4 h-auto rounded-2xl" />
         </figure>
         <p className=" text-justify mb-4">{description}</p>
-        <h2 className="font-bold text-5xl">${price}</h2>
       </div>
 
-      <div className='flex flex-col items-center mb-4'>
-        <p>Añadir</p>
-        <PlusCircleIcon
-          className='w-12 hover:cursor-pointer'
-          onClick={()=>addItem(showedProduct,cartState,setCartState)}
-        />
+      <div className='flex flex-col items-center w-full mb-4'>
+      <button 
+          className='flex justify-around items-center w-10/12 p-3 mb-5 mx-auto bg-orange-500 bg-opacity-95 rounded-2xl text-white'
+          onClick={
+            () => {addItem(showedProduct, cartState, setCartState)}
+          }
+        
+        >
+          <span className=' p-2 rounded-2xl bg-black bg-opacity-80  '>
+            {`$${price}`}
+          </span>
+
+          <p>Añadir</p>
+
+          <ChevronRightIcon className=' w-8'/>
+        </button>
       </div>
 
     </aside>

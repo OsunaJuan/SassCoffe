@@ -33,7 +33,7 @@ function Store() {
       
       <StoreLayout>
         {
-        productsToDisplay.map((item)=>(<ProductCard product={item} h="80" w="96" key={item.id}/>))
+        productsToDisplay.map((item)=>(<ProductCard product={item}  key={item.id}/>))
         }
       </StoreLayout>
 
