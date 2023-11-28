@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 import { useProductProvider } from '../../CONTEXT'
 import { OrderCard } from '../../COMPONENTS/OrderCard'
+import { CheckoutSideMenu } from '../../COMPONENTS/CheckoutSideMenu'
 
  function Ordenes() {
   const {orders,setOrders} = useProductProvider()
@@ -18,7 +18,8 @@ import { OrderCard } from '../../COMPONENTS/OrderCard'
 
   if(orders.length > 0){
     return (
-      <div className="flex flex-col-reverse justify-start items-center w-1/2 ">
+      <>
+       <div className="flex flex-col-reverse justify-start items-center w-1/2 ">
         {
           orders.map((item,index)=>(
             item? 
@@ -27,11 +28,17 @@ import { OrderCard } from '../../COMPONENTS/OrderCard'
             
           ))
         }
-      </div>
+        </div>
+        <CheckoutSideMenu />
+      </>
+     
     )
   }else{
     return(
+      <>
       <p>No tienes ordenes</p>
+      <CheckoutSideMenu />
+      </>
     )
   }
  

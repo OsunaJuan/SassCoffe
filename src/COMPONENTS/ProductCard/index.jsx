@@ -25,10 +25,8 @@ function ProductCard({product}) {
       </figure>
 
       <div className="flex flex-col flex-grow justify-between">
-        <div className=" px-4 mb-2">
+        <div className=" px-4 pt-4 mb-2">
           <h3 className=" font-bold text-center">{tittle}</h3>
-          <div className="h-1/6 w-11/12">
-          </div>
         </div>
 
         <button

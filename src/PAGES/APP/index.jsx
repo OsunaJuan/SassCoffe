@@ -23,7 +23,7 @@ function App() {
           
           <Route element= {<Layout/>}>
           <Route path='/store' element = {<Store/>}/>
-            <Route path = '/cuenta' element = {<MiCuenta/>}/>
+            <Route path = '/cuenta' element = {<Ordenes/>}/>
             <Route path = '/orden/:id' element = {<Orden/>}/>
             <Route path = '/ordenes' element = {<Ordenes/>}/>
             <Route path = '*' element = {<NotFound/>}/>
