@@ -57,6 +57,7 @@ function ProductProvider({children}){
             return [...prevstate, orderToAdd]
         })
         setCartState([])
+        setLocalStorage("CART",[])
         closeCheckout() 
     }
 
