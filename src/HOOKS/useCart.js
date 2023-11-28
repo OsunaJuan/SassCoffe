@@ -1,4 +1,5 @@
-
+import { useLocalStorage } from "./useLocalStorage"
+const [setLocalStorage, getLocalStorage] = useLocalStorage()
 
 //Funcion usada para buscar un objeto dentro de un array de productos:
 // params: Array:  Array de productos | itemToSearch: objeto que contiene la información del producto.
@@ -23,12 +24,15 @@ const useCart = ()=>{
     
     //Funcion usada para incrementar o en su defecto añadir un nuevo item al array.
     
-    const addItem = (item,PrevState,settingFun)=>{
+    const addItem = (item,PrevState,settingFun,lCkey)=>{
         if(findItem(PrevState,item)){   
             const newState  = [...PrevState]
             const matchItemIndex = findItem(PrevState,item).itemIndex
             newState[matchItemIndex].quantity = newState[matchItemIndex].quantity + 1
             settingFun(newState)
+            if(lCkey!=null){
+                setLocalStorage(lCkey,newState)
+            }
         }
         else{
             const newItemToAdd = 
@@ -38,13 +42,17 @@ const useCart = ()=>{
             }
             const newState = [...PrevState, newItemToAdd]
             settingFun(newState)
+            if(lCkey!=null){
+                setLocalStorage(lCkey,newState)
+            }
+            
         }
         
     }
     
     //Funcion que decrementa las cantidades de un item en un array, en caso de que esta nueva cantidad sea 0, lo elimina
     
-    const decItem = (item,PrevState,settingFun)=>{
+    const decItem = (item,PrevState,settingFun,lCkey)=>{
         const newState = [...PrevState]
         const matchItemIndex = findItem(PrevState,item).itemIndex
         newState[matchItemIndex].quantity = newState[matchItemIndex].quantity - 1
@@ -52,14 +60,20 @@ const useCart = ()=>{
             newState.splice(findItem(PrevState,item).itemIndex,1)
         }
         settingFun(newState)
+        if(lCkey!=null){
+            setLocalStorage(lCkey,newState)
+        }
     }
     
     //funcion usada para eliminar items de un array
     
-    const delItem = (item,PrevState,settingFun)=>{
+    const delItem = (item,PrevState,settingFun,lCkey)=>{
         const newState = [...PrevState]
         newState.splice(findItem(PrevState,item).matchIndex,1)
         settingFun(newState)
+        if(lCkey!=null){
+            setLocalStorage(lCkey,newState)
+        }
     }
     return [addItem,decItem,delItem]
 }

@@ -5,10 +5,13 @@ import { CheckoutItemCard } from '../../COMPONENTS/CheckoutItemCard'
 import { OrderLayout } from '../../COMPONENTS/OrderLayout'
 import { useProductProvider } from '../../CONTEXT'
 import { useTotalBalance } from '../../HOOKS/useTotalBalance'
+import { useLocalStorage } from '../../HOOKS/useLocalStorage'
 
  function Orden() {
 
   const { orders, setOrders } = useProductProvider();
+  const [setLocalStorage, getLocalStorage] = useLocalStorage()
+
 
   const getOrderId = () => {
     let { id } = useParams();
@@ -45,6 +48,7 @@ import { useTotalBalance } from '../../HOOKS/useTotalBalance'
     }
 
     setOrders(newState);
+    setLocalStorage("ORDERS",newState)
   }; 
 
   return (

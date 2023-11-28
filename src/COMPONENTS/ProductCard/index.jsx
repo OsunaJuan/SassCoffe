@@ -32,7 +32,7 @@ function ProductCard({product}) {
         <button
           className="flex justify-around items-center w-10/12 p-3 mt-4 mb-5 mx-auto bg-orange-500 bg-opacity-95 rounded-2xl text-white hover:scale-110 transition duration-300"
           onClick={(e) => {
-            addItem(product, cartState, setCartState);
+            addItem(product, cartState, setCartState,"CART");
           }}
         >
           <span className=" py-2 px-6 rounded-2xl bg-black bg-opacity-80  ">

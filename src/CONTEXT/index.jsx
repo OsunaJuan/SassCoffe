@@ -2,17 +2,19 @@ import React, { useState } from "react"
 import { createContext, useContext } from "react"
 import { Products } from "./Products"
 import { useTotalBalance } from "../HOOKS/useTotalBalance"
+import { useLocalStorage } from "../HOOKS/useLocalStorage"
 
 const productContext = createContext([])
 
 //Nos brinda un "hook" para usar el contexto
 const useProductProvider =  ()=>{return useContext(productContext) }
 const calcTotalBalance = useTotalBalance()
+const [setLocalStorage, getLocalStorage] = useLocalStorage()
 
 
 function ProductProvider({children}){
     //Estado usado en el carrito
-    const [cartState, setCartState] = useState([])   
+    const [cartState, setCartState] = useState(getLocalStorage("CART", []))   
     
     //Estado y funciones que establecen el producto a mostrarse en el detalle
     const [showedProduct, setshowedProduct] = useState({})
@@ -40,7 +42,7 @@ function ProductProvider({children}){
 
 
     //Estado y funciones usadas en el manejo de las ordenes. 
-    const [orders, setOrders] = useState([])
+    const [orders, setOrders] = useState(getLocalStorage("ORDERS", []))
     const handleCheckOut  = (newOrder)=>{
 
         const orderToAdd = {
@@ -50,9 +52,12 @@ function ProductProvider({children}){
             totalOrderBalance: calcTotalBalance(newOrder)
         }
 
-        setOrders((prevstate)=>[...prevstate, orderToAdd])
+        setOrders((prevstate)=>{
+            setLocalStorage("ORDERS", [...prevstate, orderToAdd])
+            return [...prevstate, orderToAdd]
+        })
         setCartState([])
-        closeCheckout()
+        closeCheckout() 
     }
 
     const [filter, setFilter] = useState(undefined)

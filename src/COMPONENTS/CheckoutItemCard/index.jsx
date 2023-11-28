@@ -15,7 +15,7 @@ function CheckoutItemCard({product, utils}) {
         <div className=' relative flex justify-around items-center w-full h-[7rem] m-4 border border-black rounded-lg mx-1  '>
             <div
              className='absolute top-[-13px] right-[-10px] flex items-center justify-center  p-2 rounded-full cursor-pointer ' 
-             onClick={()=>delItem(uniqueProduct,utilsArray,utilSetter)}
+             onClick={()=>delItem(uniqueProduct,utilsArray,utilSetter,"CART")}
             >
                 <XCircleIcon className=' w-10 bg-red-500 rounded-full'/>
             </div>
@@ -27,9 +27,9 @@ function CheckoutItemCard({product, utils}) {
                 <p>${price}</p>
             </div>
             <div  className='flex  justify-around items-center h-full w-2/4'>
-                <button onClick={()=> decItem(uniqueProduct,utilsArray,utilSetter)}>-</button>
+                <button onClick={()=> decItem(uniqueProduct,utilsArray,utilSetter,"CART")}>-</button>
                 <p>{quantity}</p>
-                <button onClick={()=> addItem(uniqueProduct,utilsArray,utilSetter)}>+</button>
+                <button onClick={()=> addItem(uniqueProduct,utilsArray,utilSetter,"CART")}>+</button>
             </div>
         </div>
   )
