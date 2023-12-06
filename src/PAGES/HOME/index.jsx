@@ -35,12 +35,12 @@ function Home() {
         <video autoPlay muted loop className=' hidden md:block '>
           <source src={heroVid} />
         </video>
-        <img  className='md:hidden object-contain' src={heroImgMobile}/>
+        <img  className='md:hidden' src={heroImgMobile}/>
 
       </figure>
 
       <section id='hero'>
-        <div className=" flex justify-start items-center w-full h-screen relative z-20">
+        <div className=" flex justify-start items-center w-full h-[60rem] md:h-screen relative z-20">
           <div className="flex flex-col h-1/3 w-11/12 m-auto md:ml-[10%] md:w-auto">
             <h1 className=" pb-20 text-white text-7xl md:text-8xl font-black text-center md:text-left">Calidad, cosechada en granos.</h1>
             <HashLink to="/#HomeInfo" className="w-10/12 md:w-5/12 m-auto md:m-0 rounded-none text-white text-4xl font-bold">
