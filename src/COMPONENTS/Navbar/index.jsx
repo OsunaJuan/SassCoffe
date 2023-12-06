@@ -36,7 +36,7 @@ function NavBar() {
               <div className="flex relative">
                 <ShoppingCartIcon className=" w-8 md:w-10 h-auto mr-2" />
 
-                {cartState.length>0?<span className=" absolute top-[-7px] right-[-7px] px-2 rounded-full md:text-base bg-red-500">
+                {cartState.length>0?<span className=" absolute top-[-7px] right-[-7px] px-2 rounded-full text-lg md:text-base bg-red-500">
                   {cartState.length}
                 </span>:null}
                 

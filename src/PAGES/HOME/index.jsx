@@ -35,7 +35,7 @@ function Home() {
         <video autoPlay muted loop className=' hidden md:block '>
           <source src={heroVid} />
         </video>
-        <img  className='md:hidden' src={heroImgMobile}/>
+        <img  className='md:hidden object-contain' src={heroImgMobile}/>
 
       </figure>
 
@@ -53,7 +53,7 @@ function Home() {
       </section>
 
       <section id='HomeInfo' className=" flex justify-center w-full z-20 bg-white">
-        <div className="relative w-4/5 py-16">
+        <div className="relative w-4/5 py-8 md:py-16">
           {homeCardsInfo.map((item, index) => (
             <HomeCards
               text={item.text}
@@ -65,14 +65,14 @@ function Home() {
         </div>
       </section>
 
-      <section className=" flex flex-col justify-center items-center w-full h-auto z-20 p-20 bg-white">
-        <h2 className=" text-black text-6xl font-extrabold mb-36">
+      <section className=" flex flex-col justify-center items-center w-full h-auto z-20 p-10 md:p-20 bg-white">
+        <h2 className=" text-black text-center text-5xl md:text-6xl md:text-left font-extrabold mb-20 md:mb-36">
           Nuestros productos mas vendidos
         </h2>
-        <div className="flex justify-around items-center h-full w-4/5 ">
+        <div className="flex flex-col md:flex-row justify-around items-center gap-8 md:gap-0 h-full w-4/5 ">
           {bestSellers.map((item, i) => (
             <ScrollAnimation
-              className=" w-3/12"
+              className=" w-11/12 md:w-3/12"
               animateIn={"animate__zoomIn"}
               delay={50}
               animateOnce={true}
