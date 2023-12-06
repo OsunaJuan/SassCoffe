@@ -35,11 +35,11 @@ function ProductCard({product}) {
             addItem(product, cartState, setCartState,"CART");
           }}
         >
-          <span className=" py-2 px-6 rounded-2xl bg-black bg-opacity-80  ">
+          <span className="  py-1 md:py-2  px-4 md:px-6 rounded-2xl bg-black bg-opacity-80  ">
             {`$${price}`}
           </span>
 
-          <p className=' font-bold'>Añadir</p>
+          <p className='text-xl md:text-2xl font-bold'>Añadir</p>
 
           <ChevronRightIcon className=" w-8" />
         </button>
