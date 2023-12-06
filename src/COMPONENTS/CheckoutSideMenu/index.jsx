@@ -21,8 +21,8 @@ function CheckoutSideMenu() {
 
   return (
     <aside
-      className={`${isCheckoutOpen ? "right-0 " : "right-[-25%]"}
-       flex flex-col justify-between  items-start fixed  top-[10%] w-1/4  h-[calc(100vh-10%)] border-black z-50 border-2 rounded-lg bg-white duration-500`}
+      className={`${isCheckoutOpen ? "right-0 " : " right-[-100%] md:right-[-25%]"}
+       flex flex-col justify-between  items-start fixed  top-[10%] w-full md:w-1/4  h-[calc(100vh-10%)] border-black z-50 border-2 rounded-lg bg-white duration-500`}
     >
       <div className="flex flex-col justify-start items-center h-full w-full overflow-y-scroll customBar">
         <div className="flex justify-between w-full mb-1 p-4 sticky top-0 left-0 bg-white z-10">
