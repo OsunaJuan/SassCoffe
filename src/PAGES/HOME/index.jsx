@@ -6,10 +6,11 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import { useProductProvider } from '../../CONTEXT'
 import {HomeCards} from '../../COMPONENTS/HomeCards'
 import { ProductCard } from '../../COMPONENTS/ProductCard'
-import { CheckoutSideMenu } from '../../COMPONENTS/CheckoutSideMenu';
-import { ProductDetail } from '../../COMPONENTS/ProductDetail';
+import { CheckoutSideMenu } from '../../COMPONENTS/CheckoutSideMenu'
+import { ProductDetail } from '../../COMPONENTS/ProductDetail'
 
 import heroVid from '../../resources/Home/hero-vid-comprpes.mp4'
+import heroImgMobile from '../../resources/Home/hero-mobile.jpg'
 import AgricultureImg from '../../resources/Home/agri.jpg'
 import QualiyImg from '../../resources/Home/quality.jpg'
 import VarietyImg from '../../resources/Home/variedad.jpg'
@@ -31,17 +32,19 @@ function Home() {
     <div className="flex flex-col w-full h-auto">
 
       <figure className="fixed top-0 right-0">
-        <video autoPlay muted loop>
+        <video autoPlay muted loop className=' hidden md:block '>
           <source src={heroVid} />
         </video>
+        <img  className='md:hidden' src={heroImgMobile}/>
+
       </figure>
 
       <section id='hero'>
         <div className=" flex justify-start items-center w-full h-screen relative z-20">
-          <div className="flex flex-col h-1/3 ml-80">
-            <h1 className=" pb-20 text-white text-8xl font-black text">Calidad, cosechada en granos.</h1>
-            <HashLink to="/#HomeInfo" className="w-5/12 rounded-none text-white text-4xl font-bold">
-              <div className='GlassButton p-4 rounded-lg hover:bg-white hover:text-black text-center  '>
+          <div className="flex flex-col h-1/3 w-11/12 m-auto md:ml-[10%] md:w-auto">
+            <h1 className=" pb-20 text-white text-7xl md:text-8xl font-black text-center md:text-left">Calidad, cosechada en granos.</h1>
+            <HashLink to="/#HomeInfo" className="w-10/12 md:w-5/12 m-auto md:m-0 rounded-none text-white text-4xl font-bold">
+              <div className='GlassButton p-1 md:p-4 rounded-lg md:hover:bg-white md:hover:text-black text-center  '>
                 Probá nuestros cafés:
               </div>              
             </HashLink>
