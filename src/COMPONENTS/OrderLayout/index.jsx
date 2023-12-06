@@ -5,7 +5,7 @@ import {ChevronLeftIcon}  from '@heroicons/react/24/solid'
 
 function OrderLayout({children,date,totalOrderBalance}) {
   return (
-    <div className="flex flex-1 flex-col w-11/12 h-[90%]">
+    <div className="flex flex-1 flex-col items-center md:items-start w-11/12 h-[90%]">
       <div className="flex items-center">
         <Link to="/ordenes">
           <ChevronLeftIcon className=" w-8 h-8 mr-4" />

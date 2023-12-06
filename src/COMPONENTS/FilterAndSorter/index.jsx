@@ -22,10 +22,11 @@ function FilterAndSorter() {
     const buttonClass = "border border-gray-300 py-2 px-4 rounded-2xl font-semibold transition duration-300"
 
   return (
-    <div className="flex justify-between w-4/5 mb-14">
-      <div className="flex flex-col justify-around items-center w-1/2">
+    <div className="flex flex-col md:flex-row max-sm:items-center  md:justify-between w-4/5 mb-14">
+
+      <div className="flex flex-col justify-around items-center w-full md:w-1/2">
         <p className=" text-center mb-4">Filtrar por categoria</p>
-        <div className="flex justify-around w-3/4">
+        <div className="flex justify-around w-full md:w-3/4">
           <button
             className={`${buttonClass} ${setClass("Coffe Beans", filter)}`}
             onClick={() => setStatus("Coffe Beans", filter, setFilter)}
@@ -41,9 +42,9 @@ function FilterAndSorter() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-around items-center w-1/2">
+      <div className="flex flex-col justify-around items-center w-full md:w-1/2">
         <p className=" text-center mb-4">Sortear Precios</p>
-        <div className="flex justify-around w-3/4">
+        <div className="flex justify-around w-full md:w-3/4">
           <button
             className={`${buttonClass} ${setClass(1, sorter)}`}
             onClick={() => setStatus(1, sorter, setSorter)}

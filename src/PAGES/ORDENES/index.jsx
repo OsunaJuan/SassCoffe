@@ -19,7 +19,7 @@ import { CheckoutSideMenu } from '../../COMPONENTS/CheckoutSideMenu'
   if(orders.length > 0){
     return (
       <>
-       <div className="flex flex-col-reverse justify-start items-center w-1/2 ">
+       <div className="flex flex-col-reverse justify-start items-center w-11/12 md:w-1/2 ">
         {
           orders.map((item,index)=>(
             item? 
